@@ -1,3 +1,45 @@
+In VLSI (Very Large Scale Integration), **JTAG** stands for **Joint Test Action Group**. It is a dedicated industry standard (codified as IEEE 1149.1) used for verifying, testing, and debugging integrated circuits (chips) after they have been manufactured.
+
+Think of JTAG as a built-in "backdoor" that allows engineers to look inside a microscopic chip, interact with its internal components, and ensure everything was manufactured correctly without needing physical oscilloscope probes on microscopic pins.
+
+---
+
+## Why Do We Need It?
+
+Before JTAG, engineers tested circuit boards using "bed-of-nails" testers—physical fixtures with tiny pins that pressed down on the board's metal tracks. As chips grew incredibly complex and shrank in size (with thousands of microscopic pins tucked underneath the chip package, like in Ball Grid Arrays), physically touching those connections became impossible.
+
+JTAG solved this by introducing **Boundary Scan**. Instead of physically probing the pins, tiny test cells are placed between the internal chip logic (the CORE) and the external pins. By shifting data through these cells sequentially, you can virtually test if the pins are soldered correctly and if the chip works.
+
+---
+
+## Core Architecture & The 4-5 Pin Interface
+
+JTAG operates using a simple serial interface. It requires only four mandatory pins (and one optional pin), regardless of how massive or complex the main chip is.
+
+* **TCK (Test Clock):** The clock signal that synchronizes the internal test logic independently of the chip’s system clock.
+* **TMS (Test Mode Select):** The control signal that determines the state transitions of the **TAP (Test Access Port) Controller** state machine.
+* **TDI (Test Data In):** The serial input pin where test instructions and data are shifted into the chip.
+* **TDO (Test Data Out):** The serial output pin where test results are shifted out of the chip to be verified.
+* **TRST (Test Reset - Optional):** An asynchronous reset pin to return the test logic to a safe, inactive state.
+
+---
+
+## How it Works: The TAP Controller
+
+The heart of any JTAG implementation is the **TAP Controller**. It is a 16-state finite state machine (FSM) controlled entirely by the `TMS` pin on the rising edge of `TCK`.
+
+Depending on how you manipulate the single `TMS` wire, the controller switches between two main pathways:
+
+1. **Instruction Register (IR) Pathway:** Used to tell the chip *what kind* of test or operation you want to perform (e.g., read the chip ID, bypass the chip, or execute a boundary scan).
+2. **Data Register (DR) Pathway:** Used to actually pass the test payloads or read back internal register values based on the active instruction.
+
+---
+
+## Main Uses of JTAG in VLSI
+
+* **Design for Testability (DFT):** During the manufacturing test phase, JTAG is used to run boundary-scan tests to detect manufacturing faults like short circuits, broken traces, or bad solder joints.
+* **Hardware Debugging:** Emulators and debuggers (like Lauterbach or J-Link) connect via JTAG to let software engineers step through code execution, set breakpoints, and read internal CPU registers.
+* **In-System Programming:** JTAG is frequently used to flash firmware or program non-volatile memory chips (like EEPROMs or FPGA configurations) directly on the board.
 https://github.com/steveicarus/iverilog
 
 https://www.youtube.com/watch?v=Eko86PGEoDY&t=92s
