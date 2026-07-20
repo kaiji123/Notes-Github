@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=Eko86PGEoDY&t=92s
 The `chipsalliance/rocket-chip` repository is a **generator for RISC-V based System-on-Chip (SoC) designs**.
 
 Think of it as a "chip factory" in software. Instead of manually drawing circuits or writing raw Verilog, you use this generator to programmatically define the specs of a processor, and it outputs the actual hardware description (RTL) for you.
