@@ -1,3 +1,5 @@
+https://github.com/steveicarus/iverilog
+
 https://www.youtube.com/watch?v=Eko86PGEoDY&t=92s
 The `chipsalliance/rocket-chip` repository is a **generator for RISC-V based System-on-Chip (SoC) designs**.
 
