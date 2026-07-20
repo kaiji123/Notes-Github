@@ -1,3 +1,39 @@
+Ah! When you talk about the **"Rocket package related to FPU"** in a VLSI context, you are referring to the **Rocket Chip SoC Generator** ecosystem.
+
+In Rocket Chip (which is written in **Chisel**, a Scala-based hardware construction language), the source code is organized into modular Scala packages. The direct FPU implementation relies on two highly distinct packages:
+
+---
+
+## 1. The `tile` Package (Where the FPU code lives)
+
+Within the `rocket-chip` repository structure, the actual FPU Chisel module is located inside the **`freechips.rocketchip.tile`** package.
+
+* **Path:** `src/main/scala/tile/FPU.scala`
+* **What it does:** This package acts as the container that glues the execution core (like the Rocket core or BOOM core) together with its L1 caches and coprocessors. The `FPU` class handles the RISC-V floating-point instructions (`F` for single-precision and `D` for double-precision) and manages the FPU pipeline stages, registers, and exceptions.
+
+## 2. The `hardfloat` Package (The Math Engine)
+
+The FPU inside the tile package doesn't actually calculate the raw floating-point math itself. Instead, it relies on a vital sub-repository/package called **`berkeley-hardfloat`**.
+
+* **What it does:** Hardfloat is a highly parameterized, IEEE 754-2008 compliant floating-point hardware generator.
+* **The "Recoded" Format:** Standard IEEE 754 floating-point numbers are notoriously annoying to handle in hardware because of subnormal numbers (numbers very close to zero). `hardfloat` solves this by converting numbers into an internal **"recoded format"** (adding an extra bit to the exponent). This makes operations like Fused Multiply-Add (FMA) dramatically faster and more area-efficient in silicon.
+
+---
+
+## How to Configure the FPU in Rocket Chip
+
+In the generator's configuration files (typically found under `system/Configs.scala` or `subsystem/Configs.scala`), the FPU is parameterized. You can turn it on or off or adjust its precision via the `TileKey` parameters:
+
+```scala
+// Example parameter mapping in Chisel/Scala
+val fpu_params = FPUParams(
+  fLen = 64,       // Sets the max float width (e.g., 64 for Double Precision)
+  divSqrt = true   // Instantiates hardware dividers and square-root units
+)
+
+```
+
+If you use a configuration like `SmallConfig`, it completely strips the FPU out of the generated Verilog to save silicon area.
 In VLSI (Very Large Scale Integration), **JTAG** stands for **Joint Test Action Group**. It is a dedicated industry standard (codified as IEEE 1149.1) used for verifying, testing, and debugging integrated circuits (chips) after they have been manufactured.
 
 Think of JTAG as a built-in "backdoor" that allows engineers to look inside a microscopic chip, interact with its internal components, and ensure everything was manufactured correctly without needing physical oscilloscope probes on microscopic pins.
