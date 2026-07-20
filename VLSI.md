@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=2-ZiXNd9wbc
+
 Ah! When you talk about the **"Rocket package related to FPU"** in a VLSI context, you are referring to the **Rocket Chip SoC Generator** ecosystem.
 
 In Rocket Chip (which is written in **Chisel**, a Scala-based hardware construction language), the source code is organized into modular Scala packages. The direct FPU implementation relies on two highly distinct packages:
