@@ -1,3 +1,4 @@
+https://github.com/ucb-bar/chipyard
 https://www.youtube.com/watch?v=2-ZiXNd9wbc
 
 Ah! When you talk about the **"Rocket package related to FPU"** in a VLSI context, you are referring to the **Rocket Chip SoC Generator** ecosystem.
