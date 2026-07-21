@@ -7,3 +7,8 @@ https://www.youtube.com/watch?v=WWAChsMax9c
 
 
 https://www.youtube.com/watch?v=rD20wJkPUB4
+kimi delta attention
+linear attention
+gated delta net gdn
+
+attention residual
