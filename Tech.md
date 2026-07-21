@@ -1,3 +1,4 @@
+pdfgear now has ai chat system which is game changing.
 https://www.youtube.com/watch?v=M51asSwRLxA
 
 Using a GitHub repository for note-taking is an absolute power move. If your biggest grievance with Notion and Google Docs is speed and bloat, moving to GitHub completely eliminates the problem while giving you total ownership of your data.
