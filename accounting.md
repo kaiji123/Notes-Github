@@ -1,3 +1,6 @@
+Microsoft Dynamics Business Central- Enter a Purchase Invoice
+https://www.youtube.com/watch?v=1meXyfb49YE&list=PLaHVLU6eLvaNhKUTWwn2OgOqwWjCwntlR
+
 While official, single-source market share reports covering every business size in Austria don't exist in one unified chart, industry statistics and revenue data reveal a clear breakdown of how the Austrian accounting software market is structured.
 
 Here is the breakdown of the software statistics across the three main tiers of the Austrian economy:
