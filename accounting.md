@@ -1,3 +1,5 @@
+you can generate finance reports in microsoft dynamics
+
 **Microsoft Dynamics 365 Business Central** (formerly known as **Navision** / **Dynamics NAV**) is a solid software to learn, but it serves a very specific niche in the Austrian job market.
 
 Knowing how Business Central fits into the Austrian landscape will help you decide if it's the right focus for your career goals.
