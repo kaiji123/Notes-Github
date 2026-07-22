@@ -1,3 +1,140 @@
+Given your goal—**understanding accounting deeply, building external Python tools, and making money in Slovakia**—I would separate the problem into **accounting knowledge** and **software market knowledge**.
+
+They overlap, but they're not the same.
+
+## 1. To learn accounting
+
+You do **not** need Microsoft Dynamics specifically.
+
+Accounting principles are largely the same regardless of software:
+
+* double-entry bookkeeping
+* VAT
+* invoices
+* credit notes
+* inventory
+* depreciation
+* bank reconciliation
+* accruals
+* financial statements
+
+You can learn these with:
+
+* Excel
+* a textbook or accounting course
+* sample transactions
+* any accounting software
+
+The software is just the interface.
+
+---
+
+## 2. To make money in Slovakia
+
+This is where software choice matters.
+
+If your customers are Slovak companies, they're much more likely to use local accounting packages than Microsoft Dynamics.
+
+Examples include:
+
+* Omega
+* Pohoda
+* Money S3
+* KROS products
+* occasionally Dynamics in larger enterprises
+
+Small and medium businesses dominate Slovakia, and many of them use local software because it's tailored to Slovak tax rules and reporting.
+
+If you want to sell automation to accountants and SMEs, understanding at least one major local package is a significant advantage.
+
+---
+
+## 3. Microsoft Dynamics
+
+Dynamics is valuable because it teaches enterprise ERP concepts:
+
+* dimensions
+* chart of accounts
+* workflows
+* approvals
+* fixed assets
+* purchasing
+* sales
+* inventory
+* project accounting
+
+These concepts transfer well to SAP, Oracle, and other enterprise systems.
+
+However, it is less representative of what a typical Slovak bookkeeping office uses day to day.
+
+---
+
+## 4. Excel
+
+Excel is indispensable.
+
+Professional accountants still rely on it heavily for:
+
+* reconciliation
+* imports and exports
+* VAT analysis
+* pivot tables
+* audit work
+* data cleaning
+* ad hoc reporting
+
+If your Python applications can read and write Excel well, they'll integrate naturally into many accounting workflows.
+
+---
+
+## 5. If I were building your foundation
+
+I'd prioritize it like this:
+
+1. **Accounting theory** (most important)
+2. **Excel** (advanced formulas, Power Query, pivots)
+3. **One Slovak accounting package** (such as Omega or Pohoda)
+4. **Python automation**
+5. **Microsoft Dynamics Finance**
+
+Why this order?
+
+Because once you understand accounting and a real local workflow, you'll start seeing repetitive tasks that Python can automate. Those are often the kinds of tools businesses are willing to pay for.
+
+---
+
+## 6. Your long-term advantage
+
+I actually think your edge won't be "knowing Dynamics."
+
+It will be being able to say:
+
+> "I understand accounting well enough to automate it."
+
+That leads to tools like:
+
+* invoice importers
+* bank statement converters
+* VAT validation
+* reconciliation assistants
+* journal entry generators
+* bulk transaction processors
+* document parsers (PDF → accounting entries)
+* data migration utilities between accounting systems
+
+Those solve problems regardless of the ERP.
+
+## My suggestion
+
+If your goal is to earn income in Slovakia within the next few years, I would choose:
+
+* **70%** learning accounting (including Slovak accounting rules and one widely used local package like Omega or Pohoda),
+* **20%** becoming excellent with Excel,
+* **10%** learning Microsoft Dynamics Finance to understand enterprise ERP concepts.
+
+That combination gives you a strong understanding of real accounting practice in your local market while also preparing you to build external Python applications that can later support both local software and enterprise systems.
+
+
 I don't think you made a mistake. I think you're recognizing a tradeoff that wasn't obvious when you started.
 
 Here's how I would think about it.
