@@ -1,3 +1,6 @@
+litert
+https://www.youtube.com/watch?v=8c68vFpT9Tk&t=346s
+
 https://wan-streamer.com/v0.3/
 https://thinkingmachines.ai/news/introducing-inkling/
 
