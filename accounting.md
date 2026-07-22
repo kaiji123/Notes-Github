@@ -1,3 +1,114 @@
+I think your instinct is reasonable, but I would refine it.
+
+The question is not **"Is Slovak accounting software valuable?"**. The question is:
+
+**"Does learning this software increase my ability to build valuable products?"**
+
+If your ambition is mainly **local accounting services**, then yes, learning Omega/Pohoda deeply makes sense.
+
+If your ambition is **building software products that can sell internationally**, then spending hundreds of hours mastering Slovak-specific software probably has a lower return.
+
+A better strategy would be:
+
+## Learn the accounting layer, not the Slovak software layer
+
+The valuable knowledge is:
+
+* chart of accounts
+* journal entries
+* VAT workflows
+* invoice lifecycle
+* payments
+* bank reconciliation
+* month-end closing
+* financial reporting
+* audit requirements
+
+Those transfer everywhere.
+
+The button locations and database structures of Omega or Pohoda do not transfer.
+
+---
+
+## Think in terms of market leverage
+
+A Slovak accountant using Omega might need:
+
+* automatic invoice import
+* PDF extraction
+* bank reconciliation
+* Excel cleanup
+* VAT checks
+
+They might pay a few hundred euros for a tool.
+
+A German/Austrian company using BMD, DATEV, SAP, or Dynamics might have:
+
+* larger accounting departments
+* bigger automation budgets
+* more expensive manual processes
+
+The same automation could potentially be worth thousands.
+
+---
+
+## Your strongest path might actually be DACH + enterprise
+
+Given your previous interest in Dynamics and Python, I would probably lean toward:
+
+### Foundation:
+
+* Accounting fundamentals
+* Excel
+* Python data processing
+* SQL
+* APIs
+* document processing
+
+### Software ecosystems:
+
+* Microsoft Dynamics 365 Finance / Business Central
+* DATEV concepts
+* BMD concepts (if targeting Austria)
+* SAP accounting concepts (eventually)
+
+### Build:
+
+* connectors
+* migration tools
+* reconciliation engines
+* reporting automation
+
+---
+
+## But don't completely ignore Slovakia
+
+There is one reason to understand Slovak software:
+
+It gives you **real-world exposure**.
+
+You could spend maybe 20-30 hours learning:
+
+* how Slovak invoices look
+* how VAT reporting works
+* how exports/imports work
+
+You don't need to become an Omega expert.
+
+You just need enough knowledge to recognize pain points.
+
+---
+
+The mistake would be:
+
+> "I will spend 2 years becoming the best Omega/Pohoda developer."
+
+The better approach:
+
+> "I will understand accounting deeply and build automation that works across systems."
+
+Your intuition is pointing toward the second path, and that aligns better with building scalable software rather than selling your time as a local accountant.
+
 Given your goal—**understanding accounting deeply, building external Python tools, and making money in Slovakia**—I would separate the problem into **accounting knowledge** and **software market knowledge**.
 
 They overlap, but they're not the same.
