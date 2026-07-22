@@ -1,3 +1,52 @@
+The short answer is **both, but in totally different ways**.
+
+In Austrian corporate accounting, Microsoft Dynamics (or BMD) acts as the **source of truth / system of record**, while Excel is used as the **analytical engine and reporting sandbox**.
+
+Accountants do not choose between them—they use them together every single day.
+
+---
+
+## 1. Where Microsoft Dynamics is Used Directly
+
+Accountants use Business Central straight away for **posting real, legal transactions**.
+
+Under Austrian law (*UGB*), all official accounting entries must be audit-proof (*GoBD/UGB compliant*). You cannot do official bookkeeping inside Excel.
+
+Accountants enter data directly into Business Central for:
+
+* **Daily Transaction Posting:** Entering vendor invoices, issuing customer bills, logging bank movements.
+* **VAT Filings (*UVA*):** Generating official tax reports sent directly to *FinanzOnline*.
+* **Month-End / Year-End Closing:** Generating official balance sheets (*Bilanz*) and P&L statements (*Gewinn- und Verlustrechnung - GuV*).
+* **Fixed Assets & Payroll:** Tracking depreciation and managing salary journal entries.
+
+---
+
+## 2. Where Excel is Used
+
+Even though Dynamics stores all the financial data, accountants rarely present raw Dynamics screens to executive management or auditors. They pull data into Excel for:
+
+* **Financial Controlling & Forecasting:** Building 3-year budget models, cash-flow forecasts, and dynamic "what-if" scenarios.
+* **Data Reconciliation:** Comparing complex bank feeds, inventory discrepancies, or intercompany balances across multiple subsidiaries.
+* **Custom Management Reporting:** Tailoring dashboards for CFOs or departmental managers who want specific charts rather than standard accounting tables.
+
+---
+
+## 3. The Secret Weapon: Native Dynamics-to-Excel Integration
+
+One of the biggest reasons companies choose Microsoft Dynamics 365 Business Central over standalone accounting tools is how tightly it integrates with Excel.
+
+Instead of choosing one software over the other, accountants use **Microsoft's Excel Add-in for Business Central**:
+
+1. **"Edit in Excel":** An accountant can open a vendor or journal entry list from Dynamics straight into Excel, make bulk corrections across hundreds of rows, and hit **Publish** to push the updates straight back into Dynamics.
+2. **Live Data Refresh:** You can build an Excel report that links directly to your Dynamics database. When you open the spreadsheet next month, you click *Refresh*, and Excel pulls the real-time numbers straight from Business Central without any copy-pasting.
+
+---
+
+> **Summary:**
+> You use **Business Central** to record transactions legally and enforce Austrian compliance.
+> You use **Excel** to analyze those numbers, slice data, and present financial reports to decision-makers.
+
+
 you can generate finance reports in microsoft dynamics
 
 **Microsoft Dynamics 365 Business Central** (formerly known as **Navision** / **Dynamics NAV**) is a solid software to learn, but it serves a very specific niche in the Austrian job market.
