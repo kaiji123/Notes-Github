@@ -1,3 +1,303 @@
+For your specific goal (**learn accounting deeply → build external Python automation tools → make money in Slovakia/Austria/DACH**), I would **not choose only one forever**. I would choose a sequence.
+
+My recommendation:
+
+**1. Learn Microsoft Dynamics 365 Finance / Business Central first**
+**2. Learn BMD later as a market-specific adapter**
+
+Here's why.
+
+---
+
+## Microsoft Dynamics first
+
+Dynamics teaches you **enterprise ERP thinking**, which transfers widely.
+
+You learn concepts like:
+
+* chart of accounts
+* financial dimensions
+* posting profiles
+* accounts payable
+* accounts receivable
+* fixed assets
+* inventory accounting
+* approval workflows
+* reporting structures
+* integrations and APIs
+
+Those concepts exist in:
+
+* SAP
+* Oracle
+* NetSuite
+* Business Central
+* many large ERP systems
+
+It is closer to learning the "architecture of accounting systems."
+
+For building Python applications, this is valuable because you think:
+
+> "How do I integrate with enterprise financial systems?"
+
+rather than:
+
+> "How do I automate one local accounting package?"
+
+---
+
+## BMD later
+
+BMD is valuable if you specifically want Austrian customers.
+
+It teaches you:
+
+* how Austrian accountants actually work
+* local workflows
+* payroll/accounting processes
+* Austrian reporting expectations
+
+But it is more country-specific.
+
+If you spend 500 hours becoming a BMD expert, that knowledge is less transferable outside Austria.
+
+---
+
+## Think of it like this
+
+Dynamics:
+
+```
+Accounting concepts
+        +
+Enterprise systems
+        +
+Integration mindset
+        ↓
+SAP / Oracle / Dynamics / Business Central / others
+```
+
+BMD:
+
+```
+Accounting concepts
+        +
+Austrian workflows
+        ↓
+BMD customers
+```
+
+Both are useful, but one is a foundation and one is a specialization.
+
+---
+
+## A realistic learning path
+
+### First 12 months:
+
+**Accounting**
+
+* double entry
+* VAT
+* financial statements
+* Excel
+* SQL
+* Python automation
+
+**ERP**
+
+* Dynamics 365 Finance or Business Central
+
+Build small projects:
+
+* import invoices
+* transform journal entries
+* reconcile transactions
+* export accounting data
+
+---
+
+### After that:
+
+Add BMD:
+
+* understand exports/imports
+* learn their data formats
+* build connectors
+
+Then your positioning becomes:
+
+> "I build automation tools that connect with Austrian accounting systems and enterprise ERPs."
+
+That is much stronger than:
+
+> "I know BMD."
+
+---
+
+One exception: if you already have a strong path into Austrian accounting firms and can get access to BMD users, then BMD could come first because customer access beats technology choice.
+
+But without that advantage, I would choose:
+
+**Dynamics first → BMD second.**
+
+It gives you the broadest foundation for building software rather than only operating software.
+
+Given everything you've said so far, I would **not choose Slovakia as your main target**. I would use Slovakia as your testing ground, but aim your skills toward **Austria / DACH / enterprise accounting**.
+
+Your reasoning about wages is pointing toward a real strategic issue: **market size and purchasing power matter if you want to build software.**
+
+Let's compare the two paths.
+
+|                            | Slovakia                | Austria                        |
+| -------------------------- | ----------------------- | ------------------------------ |
+| Market size                | Smaller                 | Larger                         |
+| Accounting software        | Local packages dominate | BMD, RZL, DATEV, SAP, Dynamics |
+| Language barrier           | Easier for you          | German needed                  |
+| Customer budgets           | Lower                   | Higher                         |
+| Automation willingness     | Mixed                   | Higher                         |
+| Enterprise opportunities   | Limited                 | Much stronger                  |
+| Software product potential | Smaller                 | Better                         |
+
+---
+
+## If your goal is becoming an accountant
+
+Then Slovakia is fine.
+
+You would learn:
+
+* Slovak VAT
+* local bookkeeping rules
+* Omega/Pohoda
+* local reporting
+
+You could get a stable job.
+
+But your previous messages suggest you don't want only a bookkeeping career. You want to **build tools**.
+
+---
+
+## If your goal is building accounting automation software
+
+I would choose Austria.
+
+Why?
+
+A small Austrian accounting firm might have:
+
+* dozens of clients
+* expensive employee time
+* repetitive processes
+* willingness to pay for automation
+
+A tool saving 20 hours/month can justify a meaningful subscription.
+
+The same tool in Slovakia might be viewed as "nice to have."
+
+---
+
+## The path I would take in your situation
+
+### Phase 1 — universal accounting foundation (3-6 months)
+
+Learn:
+
+* double-entry accounting
+* VAT
+* invoices
+* bank reconciliation
+* month-end closing
+* financial statements
+
+Use:
+
+* Excel
+* Python
+* maybe a simple accounting package
+
+Do not obsess over software.
+
+---
+
+### Phase 2 — DACH orientation (6-12 months)
+
+Learn:
+
+* Austrian accounting rules
+* German accounting terminology
+* BMD basics
+* DATEV concepts
+* Microsoft Business Central / Dynamics concepts
+
+You don't need to become a BMD consultant.
+
+You need to understand:
+
+* how data enters the system
+* where accountants waste time
+* what can be automated
+
+---
+
+### Phase 3 — build products
+
+Examples:
+
+**Invoice automation**
+
+```
+PDF invoice
+ ↓
+OCR
+ ↓
+Python validation
+ ↓
+Accounting entry
+ ↓
+Export to BMD/Dynamics/SAP
+```
+
+**Bank reconciliation**
+
+```
+Bank CSV
+ ↓
+Matching algorithm
+ ↓
+Suggested postings
+ ↓
+Accountant approval
+```
+
+**Migration tools**
+
+```
+Old ERP
+ ↓
+Transformer
+ ↓
+New ERP
+```
+
+These are much more valuable than creating another ERP feature.
+
+---
+
+One important point: **German is probably a bigger bottleneck than accounting software.**
+
+If you can communicate professionally in German, Austria becomes much more attractive. A technically strong person who understands accounting automation and can talk to Austrian accountants is rare.
+
+So my recommendation:
+
+**Do not spend years mastering Slovak accounting software.**
+Learn enough Slovak accounting to understand the domain, but build your expertise toward:
+
+> Accounting + Python + Excel + DACH enterprise systems
+
+That combination has much higher upside.
+
+
 I think your instinct is reasonable, but I would refine it.
 
 The question is not **"Is Slovak accounting software valuable?"**. The question is:
