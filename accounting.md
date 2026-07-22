@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=CC7412Eh2Gg
 https://www.youtube.com/watch?v=3Lfs5fAc1bU
 For your specific goal (**learn accounting deeply → build external Python automation tools → make money in Slovakia/Austria/DACH**), I would **not choose only one forever**. I would choose a sequence.
 
