@@ -1,3 +1,54 @@
+**Microsoft Dynamics 365 Business Central** (formerly known as **Navision** / **Dynamics NAV**) is a solid software to learn, but it serves a very specific niche in the Austrian job market.
+
+Knowing how Business Central fits into the Austrian landscape will help you decide if it's the right focus for your career goals.
+
+---
+
+## 1. Where Business Central Fits in Austria
+
+While tax firms and accountants usually prefer **BMD** or **RZL**, Business Central is widely used by **medium-to-large corporate companies** (SMEs/KMUs) across Austria, particularly in:
+
+* Manufacturing, wholesale, and distribution
+* Multinational companies with subsidiaries in Vienna or Graz
+* Companies that want their ERP (inventory, sales, logistics) and accounting unified in a single Microsoft system
+
+If your goal is to work as an **in-house corporate accountant** (*Inhouse Buchhalter* or *Financial Controller*) rather than at a public tax advisory firm (*Steuerberatungskanzlei*), Business Central is a valuable skill.
+
+---
+
+## 2. Austrian Compliance & Localization
+
+Microsoft provides an official **Austrian localization (AT version)** for Business Central. This means out-of-the-box it handles key Austrian tax and legal requirements:
+
+* **VAT Reporting (*Umsatzsteuer-Voranmeldung / UVA*):** Built-in templates for Austrian tax declarations.
+* **SEPA & Austrian Banking:** Native integration for local payment runs and electronic bank statement reconciliation.
+* **Austrian Chart of Accounts:** Preset general ledger accounts mapped to local standards (e.g., *RLG* / *SKR* structures).
+* **Audit Exports:** Compatibility with Austrian digital audit requirements (such as *SAF-T / E-Bilanz* exports).
+
+---
+
+## 3. How It Compares to Other Options
+
+| Feature / Criteria | **BMD NTCS** | **MS Dynamics 365 Business Central** |
+| --- | --- | --- |
+| **Primary Target** | Tax advisory firms, accounting offices, local businesses | Mid-market corporations, international companies, industry |
+| **Market Share in AT** | Absolute #1 for tax firms & external bookkeepers | Strong in corporate finance & ERP-integrated roles |
+| **Ease of Learning** | Steep learning curve, relies on WIFI/BFI courses | Easy to access via free Microsoft Learn sandboxes |
+| **Best For** | *Steuerberater*, *Selbstständiger Buchhalter* | *Inhouse Buchhalter*, Controller, ERP Consultant |
+
+---
+
+## 4. How to Learn Business Central for Free
+
+Microsoft offers free resources to practice Business Central:
+
+1. **Microsoft Learn:** Access full learning paths for *Business Central Financial Management* at no cost.
+2. **Trial Environment:** Sign up for a 30-day free trial on Microsoft's site to explore the interface, post journal entries, and set up test general ledger accounts.
+
+---
+
+> **Bottom Line:** If you want to work inside a medium-sized company or an international HQ in Austria, Business Central is a great asset. If you want to work at a local tax consultancy or start your own accounting practice, prioritizing **BMD** first will yield more immediate job opportunities.
+
 https://www.youtube.com/watch?v=CC7412Eh2Gg
 https://www.youtube.com/watch?v=3Lfs5fAc1bU
 For your specific goal (**learn accounting deeply → build external Python automation tools → make money in Slovakia/Austria/DACH**), I would **not choose only one forever**. I would choose a sequence.
