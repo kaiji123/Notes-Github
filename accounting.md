@@ -1,3 +1,5 @@
+
+https://www.youtube.com/watch?v=qyuoo49Dg4o&list=PLdCAvfoEKTdRxN_ekqOJZuuk9RMmGpvNm&index=2
 https://www.youtube.com/watch?v=wWfhAt3Ev-E&list=PLEx4-n7nojAmSLFGkZLyEWFOQFOyU2aHB
 Your intuition is completely right when it comes to **Excel integration**. Since Microsoft owns both Excel and Dynamics 365, the ecosystem connectivity between them is native.
 
