@@ -1,4 +1,4 @@
-claude design
+claude design - midjourney animate images and then use astra to upscale
 https://www.youtube.com/watch?v=rJtF32LTX8U
 
 
