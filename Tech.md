@@ -1,3 +1,85 @@
+Here is the complete text of all 10 Java refresher questions along with their correct answers and explanations.
+
+---
+
+### 1. String Equality & Memory
+
+* **Question:** Given two strings: `String s1 = "Java";` and `String s2 = new String("Java");`. What is the result of `s1 == s2` and `s1.equals(s2)` respectively?
+* **Answer:** `false, true`
+* **Explanation:** `s1` points to the string literal in the String Pool, while `new String()` forces creation of a separate object on the heap. Therefore, `s1 == s2` (reference equality) is `false`. However, `.equals()` checks content equality, which is `true`.
+
+---
+
+### 2. HashMap Collisions
+
+* **Question:** What happens in a `HashMap` when two different keys produce the same hash code (a collision)?
+* **Answer:** They are stored in the same bucket using a linked structure.
+* **Explanation:** A `HashMap` maintains a list (or Red-Black tree in Java 8+ if the chain exceeds 8 nodes) inside that bucket. Overwriting only occurs if the two keys are also equal according to `.equals()`.
+
+---
+
+### 3. Thread Visibility
+
+* **Question:** Which keyword ensures that a variable is always read from and written to main memory, preventing thread-local caching?
+* **Answer:** `volatile`
+* **Explanation:** `volatile` flushes reads and writes directly to main CPU memory rather than thread registers or caches, guaranteeing visibility across threads. (`final` prevents re-assignment after initialization).
+
+---
+
+### 4. Interface Default Method Conflicts
+
+* **Question:** In Java 8+, what is the result if a class implements two interfaces that both define a default method with the exact same signature?
+* **Answer:** The class must override the method to resolve the ambiguity.
+* **Explanation:** The Java compiler produces a compile-time error due to the "diamond problem" unless the implementing class explicitly overrides the method (or specifies `InterfaceName.super.method()`).
+
+---
+
+### 5. Exception Handling
+
+* **Question:** What is the primary difference between `Checked` and `Unchecked` exceptions?
+* **Answer:** Checked exceptions must be handled or declared at compile-time.
+* **Explanation:** Checked exceptions (subclasses of `Exception` excluding `RuntimeException`) trigger compile-time checks requiring a `try-catch` block or a `throws` clause. Unchecked exceptions extend `RuntimeException`.
+
+---
+
+### 6. Try-With-Resources
+
+* **Question:** When using a `try-with-resources` block, what interface must the resource implement?
+* **Answer:** `AutoCloseable`
+* **Explanation:** Java automatically calls the `.close()` method at the end of the `try` block on any object implementing `AutoCloseable` (or its subinterface `Closeable`).
+
+---
+
+### 7. Stream API Operations
+
+* **Question:** In the Stream API, what is the difference between an intermediate operation like `map()` and a terminal operation like `collect()`?
+* **Answer:** Intermediate operations are lazy and return a new stream.
+* **Explanation:** Intermediate operations build an execution pipeline without executing immediately. The computation only triggers when a terminal operation (`collect()`, `forEach()`, `reduce()`) is called.
+
+---
+
+### 8. JVM Memory Management
+
+* **Question:** Which area of the JVM memory stores the actual object instances?
+* **Answer:** Heap
+* **Explanation:** All object instances and arrays reside on the Heap and are managed by Garbage Collection. Stack memory holds primitive values and references to those heap objects per thread execution.
+
+---
+
+### 9. Class Immutability & Hierarchy
+
+* **Question:** What is the consequence of declaring a class as `final`?
+* **Answer:** The class cannot be extended by any other class.
+* **Explanation:** `final` on a class prevents inheritance (subclassing), like `java.lang.String`. It does not automatically make the fields inside that class final or immutable.
+
+---
+
+### 10. Java Generics & Wildcards
+
+* **Question:** Using Java Generics, which syntax allows a method to accept a List of any type that is a subclass of `Number`?
+* **Answer:** `List<? extends Number>`
+* **Explanation:** `? extends Number` defines an **upper-bounded wildcard**, restricting the unknown type to `Number` or its subtypes (such as `Integer`, `Double`). `? super Number` defines a lower-bounded wildcard.
+
 claude design - midjourney animate images and then use astra to upscale
 https://www.youtube.com/watch?v=rJtF32LTX8U
 
