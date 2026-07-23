@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=nL9uBJHR5ZQ&list=PLaHVLU6eLvaNhKUTWwn2OgOqwWjCwntlR&index=3
 aged accounts payable
 https://www.youtube.com/watch?v=0MV0n1LCqhI&list=PLaHVLU6eLvaNhKUTWwn2OgOqwWjCwntlR&index=2
 
