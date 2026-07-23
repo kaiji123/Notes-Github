@@ -1,3 +1,6 @@
+personalized purchase invoice 
+https://www.youtube.com/watch?v=3-Sdf5CxxNg&list=PLaHVLU6eLvaNhKUTWwn2OgOqwWjCwntlR&index=5
+
 Your intuition is completely right when it comes to **Excel integration**. Since Microsoft owns both Excel and Dynamics 365, the ecosystem connectivity between them is native.
 
 However, whether Dynamics or SAP is the "pure efficiency" winner depends on **how you define efficiency** in accounting.
