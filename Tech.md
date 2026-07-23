@@ -1,3 +1,35 @@
+**Yes.** The easiest and most visual way to run Claude Fable 5 is directly inside VS Code using the official **Claude Code** extension.
+
+---
+
+## Step-by-Step VS Code Setup
+
+1. **Install the Claude Code Extension:** 1 min.
+Open VS Code, press **`Cmd + Shift + X`** (Mac) or **`Ctrl + Shift + X`** (Windows/Linux) to open the Extensions tab. Search for **"Claude Code"** and click **Install** (publisher: Anthropic).
+
+
+2. **Authenticate Your Account:** 30 seconds.
+Click the **Spark icon ( ✱ )** that appears in your sidebar or top-right editor toolbar. A login window will pop up to authenticate with your Anthropic account or API key.
+
+
+3. **Set Up Permission Modes:** 1 min.
+By default, the agent will ask for approval before writing files or running terminal commands. You can toggle the bottom mode button between:
+
+* **Manual:** Asks before every file edit or command.
+* **Plan:** Creates a Markdown spec first so you can review the approach before it starts coding.
+* **Edit automatically:** Autonomously executes changes and runs tests.
+
+
+4. **Hand Off Your First Task:** Instant.
+Open your project folder in VS Code. Open the Claude panel and give it a prompt like:
+
+> *"Look at my foundation code in `/src`. Write the unit tests for the user controller, run them in the background, and fix any failures."*
+
+
+---
+
+> **Pro Tip:** If you ever prefer a pure terminal interface, you can also open the built-in VS Code terminal (`Ctrl + ~`) and simply type `claude` to run the agent CLI side-by-side with your editor.
+
 https://www.youtube.com/watch?v=GM7-ei-4Xc8
 
 If you already have foundation code written, switching from **GitHub Copilot** to **autonomous AI agents (like Claude Code powered by Claude Fable 5)** is going to feel like night and day—especially for an INTP.
