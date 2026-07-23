@@ -1,3 +1,6 @@
+aged accounts payable
+https://www.youtube.com/watch?v=0MV0n1LCqhI&list=PLaHVLU6eLvaNhKUTWwn2OgOqwWjCwntlR&index=2
+
 Official, comprehensive end-user tutorials for everyday accounting in **BMD NTCS in English are virtually non-existent**.
 
 Because BMD NTCS is tailored specifically to Austrian and German tax law (*UGB* and *EStG*), almost all user training, course materials, and documentation are produced exclusively in German.
