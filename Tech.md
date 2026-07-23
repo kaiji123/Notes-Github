@@ -1,3 +1,18 @@
+Among the list, **[bagisto / opensource-ecommerce-mobile-app](https://github.com/bagisto/opensource-ecommerce-mobile-app)** has by far the most stars on GitHub, with **~15.7k+ stars**. It is a full open-source Flutter app designed to connect seamlessly with Bagisto e-commerce backends.
+
+If you are looking for a **pure Flutter UI starter kit / template**:
+
+* **[abuanwar072 / E-commerce-Complete-Flutter-UI](https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI)** leads the category with **~4.8k+ stars**.
+
+---
+
+| Repository | GitHub Stars | Type |
+| --- | --- | --- |
+| **Bagisto Flutter App** | **~15,700+** | Full Headless Mobile Platform |
+| **abuanwar072 E-Commerce UI** | **~4,800+** | UI Template / Starter Kit |
+| **afgprogrammer / Flutter-Complete-e-commerce** | **~550+** | UI & Animations Template |
+| **Furqankhanzada / flutter_eCommerce_ui_kit** | **~470+** | UI Kit |
+
 **Yes.** The easiest and most visual way to run Claude Fable 5 is directly inside VS Code using the official **Claude Code** extension.
 
 ---
