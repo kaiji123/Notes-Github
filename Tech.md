@@ -1,3 +1,7 @@
+claude design
+https://www.youtube.com/watch?v=rJtF32LTX8U
+
+
 Among the list, **[bagisto / opensource-ecommerce-mobile-app](https://github.com/bagisto/opensource-ecommerce-mobile-app)** has by far the most stars on GitHub, with **~15.7k+ stars**. It is a full open-source Flutter app designed to connect seamlessly with Bagisto e-commerce backends.
 
 If you are looking for a **pure Flutter UI starter kit / template**:
