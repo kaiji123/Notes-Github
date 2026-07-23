@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=nyILyO_Gif8
+https://www.youtube.com/watch?v=zkudfttvTig&list=PLaHVLU6eLvaNhKUTWwn2OgOqwWjCwntlR&index=6
 personalized purchase invoice 
 https://www.youtube.com/watch?v=3-Sdf5CxxNg&list=PLaHVLU6eLvaNhKUTWwn2OgOqwWjCwntlR&index=5
 
