@@ -1,3 +1,7 @@
+claude code, antigravity and nano banana
+https://www.youtube.com/watch?v=TZUTe7s11-I
+
+
 Here is the complete text of all 10 Java refresher questions along with their correct answers and explanations.
 
 ---
