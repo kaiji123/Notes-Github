@@ -1,3 +1,61 @@
+If you already have foundation code written, switching from **GitHub Copilot** to **autonomous AI agents (like Claude Code powered by Claude Fable 5)** is going to feel like night and day—especially for an INTP.
+
+---
+
+## Copilot vs. Autonomous Agents
+
+* **GitHub Copilot = A Fast Pen.** It sits in your editor waiting for you to type, suggesting the next line or block. You are still doing the physical labor of navigating files, wiring dependencies, and running tests.
+* **Claude Fable 5 / Claude Code = A Junior Developer.** You give it a high-level directive (e.g., *"Take our foundation setup, wire up the authentication API routes, write integration tests, and make sure everything passes"*), and it autonomously inspects your files, writes code across multiple files, executes terminal commands, fixes its own bugs, and delivers the finished feature.
+
+For an INTP who hates execution drag, **you want to operate as the System Architect / Tech Lead**, while agents act as your execution workforce.
+
+---
+
+## 1. Should You Start Using Claude Fable 5?
+
+**Yes.** Anthropic's **Claude Fable 5** is specifically built for long-horizon autonomous tasks. It excels at keeping full context of an existing repository, writing its own unit tests, and verifying its work before handing it back to you.
+
+### How to use it in your repo:
+
+* **Terminal Agent (Claude Code CLI):** Run `claude` directly in your project terminal. Hand it multi-step prompts like:
+> *"Inspect our current database models in `/models`. Write the CRUD controllers for the User endpoint, match our existing error-handling pattern, and run the test suite to verify."*
+
+
+* **IDE Agent (Cursor or Windsurf in Agent Mode):** If you prefer a visual editor over the command line, tools like Cursor run in "Agent Mode" where they can edit multiple files simultaneously and execute build scripts automatically.
+
+---
+
+## 2. What to Put IN Your Repository to Make Agents Work Well
+
+To get the most out of autonomous agents when you already have foundation code, you need to give them clear guardrails so they don't break your existing setup:
+
+### A. Add an `AGENTS.md` (or `CLAUDE.md`) at the Repo Root
+
+Create a simple markdown file that acts as an "onboarding doc" for any AI agent entering your repository. Include:
+
+* **Commands:** How to run the project, run tests, and format code (e.g., `npm test`, `pytest`).
+* **Architecture Rules:** *"We use clean architecture; keep business logic out of API controllers."*
+* **Style Constraints:** *"Always use TypeScript strict mode; use Tailwind for styling."*
+
+### B. Good Test Coverage (The "Goggles" for Agents)
+
+Agents like Fable 5 work best when they can verify their own code. If you have a test command in your foundation code, the agent will run the tests, read any error output, and fix its own bugs without bothering you.
+
+---
+
+## Recommended Tech Stack for Your Setup
+
+| Role | Tool | What It Does for You |
+| --- | --- | --- |
+| **System Architect (You)** | Brain & Directives | Decide *what* needs to be built next; write clear task definitions. |
+| **Primary Autonomous Builder** | **Claude Code** (powered by **Claude Fable 5**) | Handles heavy, multi-file code execution, feature builds, and test runs. |
+| **Inline Assistant** | **GitHub Copilot** / Cursor | Keep this around for quick 1-line edits or inline completions while you inspect code. |
+| **Agent Guardrails** | `AGENTS.md` + Test Suite | Ensures agents respect your foundation code and don't introduce regressions. |
+
+---
+
+> **The INTP Play:** Stop typing boilerplate line-by-line in Copilot. Fire up a terminal agent with Claude Fable 5, give it your first foundation task, and watch it build while you focus on the big-picture architecture.
+
 This is actually one of the first technical questions you should answer **before** committing to the business.
 
 The good news is: **market data is a solved problem.** You don't need to build it yourself.
