@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=GM7-ei-4Xc8
+
 If you already have foundation code written, switching from **GitHub Copilot** to **autonomous AI agents (like Claude Code powered by Claude Fable 5)** is going to feel like night and day—especially for an INTP.
 
 ---
