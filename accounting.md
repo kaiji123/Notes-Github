@@ -1,3 +1,5 @@
+importing fixed assets
+https://www.youtube.com/watch?v=YuGFebSYgzw&list=PLEx4-n7nojAmSLFGkZLyEWFOQFOyU2aHB&index=5
 https://www.youtube.com/watch?v=VvIqbf_AtD4&list=PLEx4-n7nojAmSLFGkZLyEWFOQFOyU2aHB&index=4
 
 A **payment journal** is a specialized accounting batch where you record, review, and execute money moving out of or into your business before it posts permanently to your general ledger.
