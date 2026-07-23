@@ -1,3 +1,58 @@
+Official, comprehensive end-user tutorials for everyday accounting in **BMD NTCS in English are virtually non-existent**.
+
+Because BMD NTCS is tailored specifically to Austrian and German tax law (*UGB* and *EStG*), almost all user training, course materials, and documentation are produced exclusively in German.
+
+---
+
+### What IS Available in English vs. German
+
+| Resource Type | Available in English? | Available in German? |
+| --- | --- | --- |
+| **Technical & IT Manuals** | ✅ Yes (Installation, server configuration, cloud setup, API integrations) | ✅ Full coverage |
+| **Accounting User Tutorials** | ❌ **No** (Very limited or non-existent) | ✅ Extensive (BMD Academy, YouTube, WIFI, BFI) |
+| **Official Training Courses** | ❌ **No** | ✅ Full certification programs |
+| **Software Interface (UI)** | ⚠️ **Partial** (Language can be switched to English in settings, but underlying accounting terminology stays in German context) | ✅ Native |
+
+---
+
+### How to Learn BMD NTCS as an English Speaker
+
+If you need to learn BMD NTCS for a job in Austria without fluent German, use these practical strategies:
+
+#### 1. Learn Key German Accounting Terminology First
+
+Even if you find an English speaker to teach you, the software and tax authorities (*FinanzOnline*) rely on Austrian German terms. Memorize these core concepts:
+
+* **Soll / Haben:** Debit / Credit
+* **Eingangsrechnung (ER) / Ausgangsrechnung (AR):** Purchase Invoice / Sales Invoice
+* **Konto / Gegenkonto:** Account / Offset Account
+* **Umsatzsteuer (USt) / Vorsteuer:** Output VAT / Input VAT
+* **Buchungszeile / Erfassen:** Booking Line / Data Entry
+* **Sachkonto / Personenkonto:** General Ledger Account / Sub-ledger (Customer/Vendor) Account
+
+#### 2. Use German Video Tutorials with Auto-Translate
+
+The official **BMD Systemhaus YouTube channel** and Austrian education providers (like WIFI or BFI) have hundreds of BMD NTCS tutorials in German:
+
+* Open the video on YouTube.
+* Turn on **Subtitles/CC**.
+* Go to **Settings (gear icon) > Subtitles/CC > Auto-translate > English**.
+* While not perfect, the translation is usually clear enough to follow the screen actions and menu paths.
+
+#### 3. Translate BMD's German Knowledge Base
+
+BMD maintains an extensive online knowledge base (*BMD Community / Support-Dokumente*):
+
+* Use browser translation extensions (like Chrome Translate or DeepL Web Extension) on the German support pages to read step-by-step guides on posting entries, setting up master data, or running month-end reports.
+
+#### 4. Practice in the Software with English UI
+
+If your employer or school gives you access to a BMD NTCS test environment:
+
+* Go to **Tools / Options** (*Extras / Einstellungen*) to toggle the display language to English where supported.
+* Note that while buttons and menu names will translate, tax codes, account descriptions, and legal forms will remain in German.
+
+* 
 Microsoft Dynamics Business Central- Enter a Purchase Invoice
 https://www.youtube.com/watch?v=1meXyfb49YE&list=PLaHVLU6eLvaNhKUTWwn2OgOqwWjCwntlR
 
