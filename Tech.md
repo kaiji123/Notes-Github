@@ -1,3 +1,30 @@
+**Option 2 (Plugging in your physical Android phone)** gives you the highest efficiency by a wide margin.
+
+Here is why:
+
+### Why Physical Phone Wins
+
+* **Offloads 100% of the Work:** Your laptop doesn't have to emulate a GPU, RAM, or CPU for Android. It only compiles the code and pushes the build to the phone. Your fans stay quiet, your battery lasts twice as long, and your system stays fast.
+* **No Code Modification Required:** You don't have to hack `firebase_options.dart`, patch `dart:io`, or rewrite native code like you would for Web. The repo was designed specifically for native mobile, so it will actually work as intended out of the box.
+* **Instant Hot Reload:** Saving code changes (`Ctrl+S`) updates the screen on your phone in under a second.
+
+---
+
+### Quick 2-Minute Setup for Android
+
+1. **Enable Developer Options on your phone:** Go to **Settings $\rightarrow$ About Phone** and tap **Build Number** 7 times.
+2. **Enable USB Debugging:** Go to **Settings $\rightarrow$ System $\rightarrow$ Developer Options** and toggle **USB Debugging** ON.
+3. **Plug phone into your laptop** with a USB cable (allow USB Debugging when the prompt pops up on your phone screen).
+4. **Run in your terminal:**
+```cmd
+flutter run
+
+```
+
+
+
+Flutter will automatically detect your phone, skip all the Windows C++ linker junk, and launch the app right on your device.
+
 Depending on what target you actually want to test—and how much setup pain you want to deal with—you have **three clear paths forward**.
 
 ---
