@@ -1,3 +1,541 @@
+Here are **20 Kotlin interview questions with concise model answers** that interviewers typically expect.
+
+---
+
+# 1. What is Kotlin?
+
+**Answer:**
+Kotlin is a modern, statically typed programming language developed by JetBrains. It runs on the JVM and is fully interoperable with Java. It's the preferred language for Android development because it is more concise, safer, and offers modern language features.
+
+**Advantages over Java:**
+
+* Null safety
+* Less boilerplate
+* Extension functions
+* Data classes
+* Smart casts
+* Coroutines
+* Better type inference
+
+---
+
+# 2. What is the difference between `val` and `var`?
+
+**Answer:**
+
+* `val` = read-only reference (cannot be reassigned)
+* `var` = mutable reference
+
+```kotlin
+val name = "Alice"
+// name = "Bob" ❌
+
+var age = 20
+age = 21 // ✅
+```
+
+**Note:** `val` doesn't make an object immutable; it only prevents reassigning the reference.
+
+---
+
+# 3. Explain null safety in Kotlin.
+
+**Answer:**
+
+By default, variables cannot hold `null`.
+
+```kotlin
+var name: String = "John"
+```
+
+Nullable type:
+
+```kotlin
+var name: String? = null
+```
+
+Useful operators:
+
+Safe call
+
+```kotlin
+name?.length
+```
+
+Elvis operator
+
+```kotlin
+val length = name?.length ?: 0
+```
+
+Not-null assertion
+
+```kotlin
+name!!.length
+```
+
+Avoid `!!` unless you're certain the value isn't null.
+
+---
+
+# 4. What are data classes?
+
+**Answer:**
+
+A data class stores data and automatically generates:
+
+* `equals()`
+* `hashCode()`
+* `toString()`
+* `copy()`
+* `componentN()` functions
+
+```kotlin
+data class User(
+    val name: String,
+    val age: Int
+)
+```
+
+Example:
+
+```kotlin
+val u1 = User("Alice", 25)
+val u2 = u1.copy(age = 26)
+```
+
+---
+
+# 5. Difference between `==` and `===`?
+
+**Answer:**
+
+`==` checks **structural equality** (contents).
+
+```kotlin
+a == b
+```
+
+`===` checks **referential equality** (same object).
+
+```kotlin
+a === b
+```
+
+Example:
+
+```kotlin
+val a = String(charArrayOf('H', 'i'))
+val b = String(charArrayOf('H', 'i'))
+
+println(a == b)   // true
+println(a === b)  // false
+```
+
+---
+
+# 6. What are extension functions?
+
+**Answer:**
+
+They let you add functions to an existing class without modifying it.
+
+```kotlin
+fun String.lastChar() = this[length - 1]
+```
+
+Usage:
+
+```kotlin
+println("Kotlin".lastChar())
+```
+
+Useful for cleaner utility code.
+
+---
+
+# 7. What are higher-order functions?
+
+**Answer:**
+
+A higher-order function takes another function as a parameter or returns one.
+
+Example:
+
+```kotlin
+fun calculate(a: Int, b: Int, op: (Int, Int) -> Int): Int {
+    return op(a, b)
+}
+```
+
+Usage:
+
+```kotlin
+calculate(5, 3) { x, y -> x + y }
+```
+
+---
+
+# 8. What are lambda expressions?
+
+**Answer:**
+
+Anonymous functions.
+
+```kotlin
+val square = { x: Int ->
+    x * x
+}
+
+println(square(5))
+```
+
+Often used with collection operations.
+
+---
+
+# 9. Difference between `Array`, `List`, and `MutableList`?
+
+**Answer:**
+
+| Type        | Mutable          | Fixed Size |
+| ----------- | ---------------- | ---------- |
+| Array       | Elements mutable | Yes        |
+| List        | No               | Dynamic    |
+| MutableList | Yes              | Dynamic    |
+
+Example:
+
+```kotlin
+val arr = arrayOf(1,2,3)
+
+val list = listOf(1,2,3)
+
+val mutable = mutableListOf(1,2,3)
+mutable.add(4)
+```
+
+---
+
+# 10. Explain Kotlin scope functions.
+
+**Answer:**
+
+| Function | Object Reference | Returns       |
+| -------- | ---------------- | ------------- |
+| let      | it               | Lambda result |
+| run      | this             | Lambda result |
+| apply    | this             | Object        |
+| also     | it               | Object        |
+| with     | this             | Lambda result |
+
+Example:
+
+```kotlin
+val user = User("John", 20)
+
+user.apply {
+    println(name)
+}
+```
+
+Remember:
+
+* `apply` → configure object
+* `also` → perform side effects (e.g., logging)
+* `let` → work with nullable objects
+* `run` → execute a block and return its result
+* `with` → operate on an object without extension syntax
+
+---
+
+# 11. What are sealed classes?
+
+**Answer:**
+
+A sealed class restricts inheritance to a known set of subclasses, making `when` expressions exhaustive.
+
+```kotlin
+sealed class Result
+
+data class Success(val data: String) : Result()
+data class Error(val message: String) : Result()
+object Loading : Result()
+```
+
+Usage:
+
+```kotlin
+fun handle(result: Result) = when (result) {
+    is Success -> println(result.data)
+    is Error -> println(result.message)
+    Loading -> println("Loading...")
+}
+```
+
+---
+
+# 12. What is a companion object?
+
+**Answer:**
+
+Kotlin has no `static` keyword. Companion objects provide similar functionality.
+
+```kotlin
+class User {
+
+    companion object {
+
+        fun create() = User()
+
+    }
+}
+```
+
+Usage:
+
+```kotlin
+User.create()
+```
+
+---
+
+# 13. What are coroutines?
+
+**Answer:**
+
+Coroutines are lightweight units of asynchronous work. They let you write asynchronous code sequentially without blocking threads.
+
+Example:
+
+```kotlin
+launch {
+    delay(1000)
+    println("Done")
+}
+```
+
+Benefits:
+
+* Simpler async code
+* Lower memory overhead than threads
+* Structured concurrency
+
+---
+
+# 14. What is a suspend function?
+
+**Answer:**
+
+A `suspend` function can pause its execution without blocking the underlying thread and resume later.
+
+```kotlin
+suspend fun fetchUser() {
+    delay(1000)
+}
+```
+
+A `suspend` function must be called from another `suspend` function or a coroutine.
+
+---
+
+# 15. Difference between `launch` and `async`?
+
+**Answer:**
+
+| launch          | async                           |
+| --------------- | ------------------------------- |
+| Returns `Job`   | Returns `Deferred<T>`           |
+| No return value | Produces a result               |
+| Fire-and-forget | Use `await()` to get the result |
+
+Example:
+
+```kotlin
+val deferred = async {
+    5 + 10
+}
+
+println(deferred.await())
+```
+
+---
+
+# 16. What is Kotlin Flow?
+
+**Answer:**
+
+A `Flow` represents a cold asynchronous stream of multiple values emitted over time.
+
+Example:
+
+```kotlin
+flow {
+    emit(1)
+    emit(2)
+    emit(3)
+}
+```
+
+Collect values:
+
+```kotlin
+flow.collect {
+    println(it)
+}
+```
+
+Benefits:
+
+* Asynchronous
+* Supports operators like `map`, `filter`, `catch`
+* Built-in cancellation support
+
+---
+
+# 17. Why use inline functions?
+
+**Answer:**
+
+Inlining replaces the function call with the function body at compile time, avoiding the overhead of creating lambda objects.
+
+```kotlin
+inline fun execute(action: () -> Unit) {
+    action()
+}
+```
+
+Benefits:
+
+* Better performance
+* Enables reified type parameters
+* Allows non-local returns from lambdas
+
+---
+
+# 18. What are reified type parameters?
+
+**Answer:**
+
+Normally, generic type information is erased at runtime (type erasure). Reified type parameters preserve the type inside an `inline` function.
+
+```kotlin
+inline fun <reified T> printType() {
+    println(T::class)
+}
+```
+
+Without `reified`, `T::class` is not available at runtime.
+
+---
+
+# 19. What is delegation?
+
+**Answer:**
+
+Delegation lets one class reuse another class's implementation instead of inheriting from it.
+
+Class delegation:
+
+```kotlin
+interface Printer {
+    fun print()
+}
+
+class ConsolePrinter : Printer {
+    override fun print() = println("Printing")
+}
+
+class OfficePrinter(private val printer: Printer) : Printer by printer
+```
+
+Property delegation:
+
+```kotlin
+val lazyValue by lazy {
+    "Hello"
+}
+```
+
+The value is initialized only on first access.
+
+---
+
+# 20. Explain common collection operators.
+
+**Answer:**
+
+```kotlin
+val nums = listOf(1,2,3,4)
+```
+
+**map**
+
+Transforms each element.
+
+```kotlin
+nums.map { it * 2 }
+// [2,4,6,8]
+```
+
+**filter**
+
+Keeps matching elements.
+
+```kotlin
+nums.filter { it % 2 == 0 }
+// [2,4]
+```
+
+**reduce**
+
+Combines elements into a single value.
+
+```kotlin
+nums.reduce { acc, n -> acc + n }
+// 10
+```
+
+**fold**
+
+Like `reduce`, but starts with an initial value.
+
+```kotlin
+nums.fold(100) { acc, n -> acc + n }
+// 110
+```
+
+**groupBy**
+
+Groups elements by a key.
+
+```kotlin
+nums.groupBy { it % 2 }
+// {1=[1, 3], 0=[2, 4]}
+```
+
+**flatMap**
+
+Maps each element to a collection and flattens the results.
+
+```kotlin
+listOf(listOf(1, 2), listOf(3, 4)).flatMap { it }
+// [1, 2, 3, 4]
+```
+
+**find**
+
+Returns the first matching element or `null`.
+
+```kotlin
+nums.find { it > 2 }
+// 3
+```
+
+---
+
+These questions and answers cover the core Kotlin concepts typically expected in interviews for junior to mid-level developers. For senior roles, be prepared to discuss coroutine internals, structured concurrency, Flow operators, DSL creation, performance optimizations, interoperability with Java, and Android architecture components in greater depth.
+
 In Java, array initialization depends on the data type and whether you want default values or specific values.
 
 ### 1. Integer (`int`) array
