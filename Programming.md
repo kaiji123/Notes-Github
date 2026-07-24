@@ -1,3 +1,189 @@
+In Java, array initialization depends on the data type and whether you want default values or specific values.
+
+### 1. Integer (`int`) array
+
+```java
+int[] numbers = new int[5];
+```
+
+Default values:
+
+```java
+[0, 0, 0, 0, 0]
+```
+
+Or initialize with values:
+
+```java
+int[] numbers = {1, 2, 3, 4, 5};
+```
+
+---
+
+### 2. Double (`double`) array
+
+```java
+double[] prices = new double[3];
+```
+
+Default values:
+
+```java
+[0.0, 0.0, 0.0]
+```
+
+With values:
+
+```java
+double[] prices = {9.99, 14.50, 3.25};
+```
+
+---
+
+### 3. Boolean (`boolean`) array
+
+```java
+boolean[] flags = new boolean[4];
+```
+
+Default values:
+
+```java
+[false, false, false, false]
+```
+
+With values:
+
+```java
+boolean[] flags = {true, false, true};
+```
+
+---
+
+### 4. Character (`char`) array
+
+```java
+char[] letters = new char[3];
+```
+
+Default values are the null character (`'\u0000'`).
+
+With values:
+
+```java
+char[] letters = {'a', 'b', 'c'};
+```
+
+---
+
+### 5. String array
+
+```java
+String[] names = new String[3];
+```
+
+Default values:
+
+```java
+[null, null, null]
+```
+
+With values:
+
+```java
+String[] names = {"Alice", "Bob", "Charlie"};
+```
+
+---
+
+### 6. Object array
+
+Suppose you have:
+
+```java
+class Student {
+    String name;
+}
+```
+
+Initialize the array:
+
+```java
+Student[] students = new Student[2];
+```
+
+Initially:
+
+```java
+[null, null]
+```
+
+You must create each object separately:
+
+```java
+students[0] = new Student();
+students[1] = new Student();
+```
+
+---
+
+### 7. Two-dimensional arrays
+
+```java
+int[][] matrix = new int[3][4];
+```
+
+Creates a 3×4 matrix filled with `0`s.
+
+Or with values:
+
+```java
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+```
+
+---
+
+## Summary of default values
+
+| Data Type                                   | Default Value |
+| ------------------------------------------- | ------------- |
+| `byte`                                      | `0`           |
+| `short`                                     | `0`           |
+| `int`                                       | `0`           |
+| `long`                                      | `0L`          |
+| `float`                                     | `0.0f`        |
+| `double`                                    | `0.0`         |
+| `char`                                      | `'\u0000'`    |
+| `boolean`                                   | `false`       |
+| Reference types (`String`, objects, arrays) | `null`        |
+
+### General syntax
+
+Allocate an array with default values:
+
+```java
+Type[] array = new Type[size];
+```
+
+Initialize with explicit values:
+
+```java
+Type[] array = {value1, value2, value3};
+```
+
+Or equivalently:
+
+```java
+Type[] array = new Type[] {value1, value2, value3};
+```
+
+The latter form (`new Type[] {...}`) is required if you're assigning the array after its declaration or passing it directly as a method argument.
+
+
 
 Here are the complete, ready-to-run Java solutions and explanations for all 10 questions.
 
