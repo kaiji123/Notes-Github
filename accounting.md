@@ -1,3 +1,6 @@
+financial report
+https://www.youtube.com/watch?v=lQ1S4wyLphY&list=PLEx4-n7nojAmSLFGkZLyEWFOQFOyU2aHB&index=6
+
 importing fixed assets
 https://www.youtube.com/watch?v=YuGFebSYgzw&list=PLEx4-n7nojAmSLFGkZLyEWFOQFOyU2aHB&index=5
 https://www.youtube.com/watch?v=VvIqbf_AtD4&list=PLEx4-n7nojAmSLFGkZLyEWFOQFOyU2aHB&index=4
