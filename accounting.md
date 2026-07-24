@@ -1,3 +1,6 @@
+selling fixed assets
+https://www.youtube.com/watch?v=Wb3buwZHxN8&list=PLEx4-n7nojAmSLFGkZLyEWFOQFOyU2aHB&index=7
+
 financial report
 https://www.youtube.com/watch?v=lQ1S4wyLphY&list=PLEx4-n7nojAmSLFGkZLyEWFOQFOyU2aHB&index=6
 
