@@ -1,3 +1,599 @@
+If you're interviewing for **Android (Kotlin)**, then **Fragments** are one of the most commonly asked topics. Interviewers usually don't just ask "What is a Fragment?"—they ask about the Fragment lifecycle, communication, navigation, ViewModel usage, and common pitfalls.
+
+Here are the most important Fragment interview questions with answers.
+
+---
+
+# 1. What is a Fragment?
+
+### Answer
+
+A **Fragment** is a reusable portion of a UI that lives inside an Activity. It has its own lifecycle, layout, and behavior, but it cannot exist without being hosted by an Activity.
+
+Advantages:
+
+* Reusable UI components
+* Easier support for different screen sizes
+* Better navigation with the Navigation Component
+* Independent lifecycle
+
+---
+
+# 2. Fragment vs Activity
+
+| Activity           | Fragment                        |
+| ------------------ | ------------------------------- |
+| Independent screen | Part of an Activity             |
+| Has its own window | Shares Activity's window        |
+| Can exist alone    | Must be attached to an Activity |
+| Own lifecycle      | Lifecycle depends on Activity   |
+
+---
+
+# 3. Explain the Fragment Lifecycle.
+
+The major lifecycle methods are:
+
+```text
+onAttach()
+onCreate()
+onCreateView()
+onViewCreated()
+onStart()
+onResume()
+
+onPause()
+onStop()
+
+onDestroyView()
+onDestroy()
+onDetach()
+```
+
+A common interview question is:
+
+**Why are there both `onDestroyView()` and `onDestroy()`?**
+
+**Answer:**
+
+* `onDestroyView()` destroys only the UI (view hierarchy).
+* `onDestroy()` destroys the Fragment object itself.
+
+This distinction is important because the Fragment may remain on the back stack after its view is destroyed.
+
+---
+
+# 4. Difference between `onCreate()` and `onCreateView()`
+
+### `onCreate()`
+
+Initialize non-UI data.
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+}
+```
+
+### `onCreateView()`
+
+Inflate the layout.
+
+```kotlin
+override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+): View {
+    return inflater.inflate(R.layout.fragment_home, container, false)
+}
+```
+
+---
+
+# 5. What is `onViewCreated()` used for?
+
+It's called after the view has been created.
+
+Ideal place for:
+
+* Setting click listeners
+* Initializing RecyclerView
+* Observing LiveData or Flow
+* Configuring adapters
+
+```kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+    button.setOnClickListener {
+
+    }
+
+}
+```
+
+---
+
+# 6. Why use View Binding in Fragments?
+
+Avoid `findViewById()` and improve type safety.
+
+Example:
+
+```kotlin
+private var _binding: FragmentHomeBinding? = null
+private val binding get() = _binding!!
+```
+
+Initialize:
+
+```kotlin
+_binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+return binding.root
+```
+
+Destroy:
+
+```kotlin
+override fun onDestroyView() {
+    super.onDestroyView()
+    _binding = null
+}
+```
+
+### Interview Question
+
+**Why set binding to null?**
+
+Because the Fragment's view is destroyed before the Fragment itself. Clearing the binding avoids memory leaks by releasing references to the old view hierarchy.
+
+---
+
+# 7. Fragment Transaction
+
+Replace fragment:
+
+```kotlin
+supportFragmentManager.beginTransaction()
+    .replace(R.id.container, HomeFragment())
+    .commit()
+```
+
+Add fragment:
+
+```kotlin
+.add(...)
+```
+
+Remove:
+
+```kotlin
+.remove(...)
+```
+
+---
+
+# 8. What is the Back Stack?
+
+If you call:
+
+```kotlin
+.addToBackStack(null)
+```
+
+Android remembers the previous Fragment.
+
+Without it:
+
+Back button closes the Activity.
+
+With it:
+
+Back button returns to the previous Fragment.
+
+---
+
+# 9. How do Fragments communicate?
+
+### Bad approach
+
+```kotlin
+(activity as MainActivity).doSomething()
+```
+
+Very tightly coupled.
+
+---
+
+### Better approach
+
+Shared ViewModel.
+
+```kotlin
+private val viewModel: SharedViewModel by activityViewModels()
+```
+
+Fragment A:
+
+```kotlin
+viewModel.selectedUser.value = user
+```
+
+Fragment B:
+
+```kotlin
+viewModel.selectedUser.observe(viewLifecycleOwner) {
+
+}
+```
+
+---
+
+# 10. What is `childFragmentManager`?
+
+Used when a Fragment contains other Fragments.
+
+Example:
+
+```
+Activity
+
+  └── ParentFragment
+
+          └── ChildFragment
+```
+
+Use:
+
+```kotlin
+childFragmentManager
+```
+
+instead of
+
+```kotlin
+parentFragmentManager
+```
+
+---
+
+# 11. What is the Navigation Component?
+
+Jetpack library that simplifies navigation.
+
+Benefits:
+
+* Safe Args
+* Back stack management
+* Animations
+* Deep links
+* Type-safe argument passing
+
+---
+
+# 12. What is Safe Args?
+
+Instead of:
+
+```kotlin
+bundle.putString("name", "John")
+```
+
+You do:
+
+```kotlin
+val action =
+    HomeFragmentDirections.actionHomeToProfile("John")
+
+findNavController().navigate(action)
+```
+
+Retrieve:
+
+```kotlin
+val args: ProfileFragmentArgs by navArgs()
+
+println(args.name)
+```
+
+No manual keys.
+
+No casting.
+
+Compile-time safety.
+
+---
+
+# 13. Why use `viewLifecycleOwner`?
+
+Instead of:
+
+```kotlin
+observe(this)
+```
+
+Use:
+
+```kotlin
+observe(viewLifecycleOwner)
+```
+
+Reason:
+
+The Fragment may outlive its view. Observing with `viewLifecycleOwner` automatically removes the observer when the view is destroyed, preventing crashes and memory leaks.
+
+---
+
+# 14. Fragment vs ViewModel
+
+Fragment:
+
+* UI
+* User interaction
+* Lifecycle
+
+ViewModel:
+
+* Stores UI state
+* Survives configuration changes
+* Holds business logic
+
+Never store business logic inside a Fragment.
+
+---
+
+# 15. What happens during screen rotation?
+
+Without ViewModel:
+
+```
+Activity destroyed
+
+↓
+
+Fragment destroyed
+
+↓
+
+Everything recreated
+```
+
+With ViewModel:
+
+```
+Activity recreated
+
+↓
+
+Fragment recreated
+
+↓
+
+Same ViewModel reused
+```
+
+Data survives configuration changes.
+
+---
+
+# 16. What is `setRetainInstance()`?
+
+Older way to retain Fragments across configuration changes.
+
+Today it's **deprecated**. Use a ViewModel instead.
+
+---
+
+# 17. Difference between `commit()` and `commitNow()`
+
+`commit()`
+
+* Asynchronous
+* Schedules the transaction to run later
+
+`commitNow()`
+
+* Synchronous
+* Executes immediately
+* Cannot be used with `addToBackStack()`
+
+---
+
+# 18. Common Fragment Memory Leaks
+
+Bad:
+
+```kotlin
+lateinit var binding: FragmentHomeBinding
+```
+
+The binding remains after the view is destroyed.
+
+Good:
+
+```kotlin
+private var _binding: FragmentHomeBinding? = null
+```
+
+Set to `null` in `onDestroyView()`.
+
+---
+
+# 19. Why shouldn't you perform long-running work in a Fragment?
+
+A Fragment can be destroyed due to configuration changes or navigation. Long-running work tied directly to the Fragment may be cancelled or leak resources. Instead:
+
+* Put UI-related state and logic in a `ViewModel`.
+* Use `viewModelScope` for work that should survive configuration changes.
+* Use `viewLifecycleOwner.lifecycleScope` for work that should stop when the Fragment's view is destroyed.
+
+---
+
+# 20. What is `lifecycleScope` vs `viewLifecycleOwner.lifecycleScope`?
+
+This is a favorite interview question.
+
+```kotlin
+lifecycleScope.launch {
+
+}
+```
+
+This scope is tied to the Fragment's **lifecycle**.
+
+```kotlin
+viewLifecycleOwner.lifecycleScope.launch {
+
+}
+```
+
+This scope is tied to the Fragment's **view lifecycle**.
+
+If you're updating the UI or collecting a `Flow`, use `viewLifecycleOwner.lifecycleScope` so the coroutine is cancelled when the view is destroyed.
+
+---
+
+## Quick Interview Tips
+
+Be prepared to answer these common follow-up questions:
+
+* Why is `onDestroyView()` different from `onDestroy()`?
+* Why should you clear View Binding in `onDestroyView()`?
+* Why use `viewLifecycleOwner` instead of `this` when observing `LiveData`?
+* How do you pass data between Fragments safely?
+* Why use a shared `ViewModel` instead of casting the Activity?
+* What happens to a Fragment and its `ViewModel` during a configuration change?
+* When would you use `childFragmentManager`?
+* What's the difference between `replace()`, `add()`, and `remove()` in a `FragmentTransaction`?
+
+If you can confidently explain these topics with examples, you'll be well prepared for most Android Kotlin interviews involving Fragments.
+
+
+In Kotlin, you cancel a background task by **cancelling the coroutine's `Job`**. Coroutines support **cooperative cancellation**, meaning the coroutine must reach a suspension point (like `delay()`) or explicitly check for cancellation.
+
+## Example 1: Cancel a coroutine using its `Job`
+
+```kotlin
+import kotlinx.coroutines.*
+
+fun main() = runBlocking {
+    val job = launch {
+        repeat(10) { i ->
+            println("Working... $i")
+            delay(1000) // Suspension point; checks for cancellation
+        }
+    }
+
+    delay(3000)      // Let it run for 3 seconds
+    job.cancel()     // Request cancellation
+    job.join()       // Wait for it to finish
+
+    println("Coroutine cancelled")
+}
+```
+
+**Output:**
+
+```
+Working... 0
+Working... 1
+Working... 2
+Coroutine cancelled
+```
+
+---
+
+## Example 2: `cancelAndJoin()`
+
+Instead of calling `cancel()` and `join()` separately:
+
+```kotlin
+job.cancelAndJoin()
+```
+
+This both requests cancellation and waits until the coroutine has finished cleaning up.
+
+---
+
+## Example 3: Handle cleanup with `try`/`finally`
+
+When a coroutine is cancelled, it throws a `CancellationException`. You can use `finally` to release resources.
+
+```kotlin
+val job = launch {
+    try {
+        repeat(100) {
+            println("Working...")
+            delay(500)
+        }
+    } finally {
+        println("Cleaning up...")
+    }
+}
+
+delay(2000)
+job.cancelAndJoin()
+```
+
+Output:
+
+```
+Working...
+Working...
+Working...
+Working...
+Cleaning up...
+```
+
+---
+
+## Example 4: CPU-intensive work
+
+Cancellation is **cooperative**, so if your coroutine doesn't suspend, it won't stop automatically.
+
+❌ This won't cancel promptly:
+
+```kotlin
+launch {
+    while (true) {
+        // Heavy computation
+    }
+}
+```
+
+✅ Check for cancellation:
+
+```kotlin
+launch {
+    while (isActive) {
+        // Do computation
+    }
+}
+```
+
+Or explicitly check:
+
+```kotlin
+launch {
+    while (true) {
+        ensureActive()
+        // Work
+    }
+}
+```
+
+---
+
+## Interview Answer
+
+If asked **"How do you cancel a background task using a coroutine?"**, you could answer:
+
+> "Each coroutine has an associated `Job`. To cancel a background task, keep a reference to the `Job` and call `cancel()` or `cancelAndJoin()`. Coroutines use cooperative cancellation, so they stop at suspension points like `delay()` or when they check `isActive` or call `ensureActive()`. Cleanup logic should be placed in a `finally` block."
+
+This answer demonstrates an understanding of both **how** cancellation works and **why** it works that way.
+
+
 Here are **20 Kotlin interview questions with concise model answers** that interviewers typically expect.
 
 ---
