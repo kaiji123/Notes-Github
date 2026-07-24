@@ -1,3 +1,76 @@
+Depending on what target you actually want to test—and how much setup pain you want to deal with—you have **three clear paths forward**.
+
+---
+
+### Option 1: Run on an Android Emulator (Best for Mobile Testing)
+
+Since Bagisto Flutter was designed as a mobile app, running it on an Android emulator is the most accurate way to test it without hitting `dart:io` or Web compatibility bugs.
+
+1. Open **Android Studio** $\rightarrow$ **Virtual Device Manager**.
+2. Launch an existing emulator (or create a standard Pixel device running API 30+).
+3. Run the app target:
+```cmd
+flutter run -d emulator-5554
+
+```
+
+
+*(Or select your running emulator from VS Code / Android Studio).*
+
+---
+
+### Option 2: Fix Web for Basic UI Browsing
+
+If you just want to quickly tweak UI or check layouts in Chrome, you can easily guard the Firebase startup logic so Web doesn't crash:
+
+1. In `lib/core/notifications/firebase_options.dart` (and `firebase_service.dart`), import `foundation.dart`:
+```dart
+import 'package:flutter/foundation.dart';
+
+```
+
+
+2. Wrap your `Platform` checks or Firebase initialization in a `kIsWeb` check:
+```dart
+if (kIsWeb) {
+  // Skip mobile-only Firebase or return web options
+  return;
+}
+
+```
+
+
+3. Run in Chrome:
+```cmd
+flutter run -d chrome
+
+```
+
+
+> **Note:** Features depending on native code (like push notifications or local device storage) won't work on Web, but the core UI and REST/GraphQL API connections to your Bagisto backend will work.
+
+
+
+---
+
+### Option 3: Fix the Windows C++ Build (If you specifically need Windows Desktop)
+
+If you specifically want a native Windows desktop app, you need to resolve the MSVC C++ runtime mismatch causing the `LNK2019` error you saw earlier:
+
+1. Delete the `build/` folder entirely:
+```cmd
+flutter clean
+
+```
+
+
+2. Open **Visual Studio Installer**, click **Modify**, and make sure **Desktop development with C++** is fully updated with the latest v143 build tools.
+3. Try building in release mode (which avoids debug symbol CRT mismatches):
+```cmd
+flutter run -d windows --release
+
+```
+
 claude code, antigravity and nano banana
 https://www.youtube.com/watch?v=TZUTe7s11-I
 
